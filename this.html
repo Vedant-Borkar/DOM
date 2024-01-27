@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="container">
+  <button onclick="create('obj')">Create</button>
+  <button onmouseenter="change(this)">Button lol</button>
+  <button onclick="hide(this)">Hide</button>
+
+    <input type="password">
+
+  </div>
+  <script>
+    function change(obj){
+      obj.style.color="red"
+    }
+    function create(obj){
+      container.innerHTML+="<button onmouseenter='change(this)' onclick='hide(this)'>Button lol</button>"
+    }
+    function hide(obj){
+      obj.style.display="none"
+    }
+  </script>
+</body>
+</html>

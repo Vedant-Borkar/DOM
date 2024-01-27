@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Redirector</title>
+</head>
+<body>
+  
+  <input type="text" id="uname">
+  <input type="text" id="upass">
+  <button onclick="validate()">Login</button>
+
+  <script>
+    function validate(){
+      unameObj=document.getElementById("uname")
+      upassObj=document.getElementById("upass")
+
+      if(unameObj.value.length==0)
+      {
+        alert("Username cannot be empty")
+        return
+      }
+      if(unameObj.value=="vedant" && upassObj.value=="borkar")
+      {
+        alert("Login Success")
+        location.href="https://www.youtube.com"
+      }
+      else{
+        alert("Invalid Creds")
+      }
+    }
+  </script>
+
+</body>
+</html>

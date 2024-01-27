@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+  <script>
+    source=[
+      {
+        name:"Vedant",
+        year:2004,
+        gender:"male"
+      },
+      {
+        name:"Ved",
+        year:2005,
+        gender:"male"
+      },
+      {
+        name:"ant",
+        year:2014,
+        gender:"female"
+      },
+      {
+        name:"dant",
+        year:1004,
+        gender:"female"
+      },
+      {
+        name:"Vedan",
+        year:2024,
+        gender:"male"
+      }
+    ]
+
+    container=document.getElementById("container")
+    for(i=0;i<=source.length;i++){
+      container.innerHTML+=`<h1>${source[i].name}</h1>
+      <h1>${source[i].year}</h1>
+      <h1>${source[i].gender}</h1>`
+      container.appe
+    }
+
+  </script>
+
+</body>
+</html>

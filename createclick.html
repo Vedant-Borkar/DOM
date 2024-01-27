@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+    <h1>Create:</h1>
+  <button onclick="create('h1')">H1</button>
+  <button onclick="create('button')">Button</button>
+  <button onclick="create('input')">Input</button>
+  <div id="container"></div>
+  <script>
+    container=document.getElementById("container")
+    eleCount=1;
+    function create(ele){
+      if(ele=="h1"){
+        container.innerHTML+="<h1 onclick='hide(this)'>Header Tag</h1>";
+      }else if(ele=="button"){
+        container.innerHTML+="<button onclick='hide(this)'>Button</button>";
+      }else if("input"){
+        container.innerHTML+=`<input onclick="hide(this)" type="text" />Input number ${eleCount}`
+      }
+      eleCount++;
+    }
+
+    function hide(obj){
+        obj.style.display="none";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+    .card{
+      display: inline-block;
+      margin: 10px;
+      background-color: blanchedalmond;
+      padding: 20px;
+    }
+    .name {
+      font-size: 24px;
+    }
+  </style>
+  
+</head>
+<body>
+  
+  <input  id="name" type="text" placeholder="Movie name">
+  <input id="year" type="number" placeholder="Release Year">
+  <input id="box"type="text" placeholder="Box Office Collection">
+
+  <button onclick="addMovie()"> Add Movie</button>
+  <button onclick="delMovie()">Delete Last Movie</button>
+
+  
+  <div id="container">
+
+  </div>
+  <input  id="nameE" type="text" placeholder="Movie name">
+  <input id="yearE" type="number" placeholder="Release Year">
+  <input id="boxE"type="text" placeholder="Box Office Collection">
+  <script>
+    container=document.getElementById("container")
+    nameObj=document.getElementById("name")
+    year=document.getElementById("year")
+    box=document.getElementById("box")
+    source=[
+      {
+        name:"Avengers",year:2004,box:"130mil"
+      },
+      {
+        name:"Hulk",year:2006,box:"90mil"
+      }
+    ]
+      function printer(){
+        container.innerHTML=""
+      for(i=0;i<source.length;i++){
+        container.innerHTML+=`<div class="card">
+        <div class="name">${source[i].name}</div>
+        <div class="year">${source[i].year}</div>
+        <div class="box">${source[i].box}</div>
+        <button onclick="deletemov(${i})">Delete</button>
+        <button onclick="editmov(${i})">Edit</button>
+        </div>
+        `
+      }
+    }
+    printer()
+    function addMovie(){
+      temp_obj={name:nameObj.value,year:year.value,box:box.value}
+      source.push(temp_obj)
+      printer()
+    }
+    function delMovie(){
+      source.pop()
+      printer()
+    }
+
+    function deletemov(ind){
+      res=confirm(`Are you sure u want to delete ${source[ind].name}`)
+      if(res){
+      source.splice(ind,1)
+      printer()
+      }
+    }
+    function editmov(ind){
+    nameE=document.getElementById("nameE")
+    yearE=document.getElementById("yearE")
+    boxE=document.getElementById("boxE")
+    tempobj={name:nameE.value,year:yearE.value,box:boxE.value}
+    source.splice(ind,1,tempobj)
+    printer()
+    }
+  </script>
+</body>
+</html>

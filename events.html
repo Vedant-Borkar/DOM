@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+  h1{
+    width: fit-content;
+  }
+  </style>
+</head>
+<body>
+  
+  <h1 onmouseenter="newContent()"  onmouseleave="oldContent()">TEST Content</h1>
+
+  <script>
+    h1array=document.getElementsByTagName('h1')
+    function newContent(){
+      h1array[0].innerHTML="I am updated"
+    }
+
+    function oldContent(){
+      h1array[0].innerHTML="Back to old"
+    }
+  </script>
+
+</body>
+</html>
